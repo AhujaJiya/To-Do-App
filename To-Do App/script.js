@@ -14,7 +14,16 @@ function appendToDo() {
     let toDoItem = inputToDo.value;
     let todoDate = dateToDo.value;
 
-    toDoList.push({ item: toDoItem, due: todoDate });
+    if (toDoItem != '' && todoDate != '') {
+        toDoList.push({ item: toDoItem, due: todoDate });
+    } else if (toDoItem != '') {
+        alert('Please select the due date');
+    } else if (todoDate != '') {
+        alert('Please enter the to-do');
+    } else {
+        alert('Please enter the to-do and due date');
+    }
+
     inputToDo.value = '';
     dateToDo.value = '';
 
